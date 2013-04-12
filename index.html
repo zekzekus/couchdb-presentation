@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+<div class="slides">
+    <section>
+        <h1>couchdb ve django</h1>
+<p>
+<font face="verdana">Kanepeye Uzanın ve <i>
+    <u>Gevşeyin!</u>
+</i>
+</font>
+</p>
+<p>
+<img src="http://i.imgur.com/0nrQ3j9.png">
+<font face="verdana">
+    <i>
+    <u>
+    <br>
+</u>
+</i>
+</font>
+</p>
+
+</section>
+        <section>
+            <h2>
+                <font face="georgia">Nedİr?</font>
+            </h2>
+            <div>
+                <br>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <font face="georgia">Belge deposu</font>
+                    </li>
+                    <li>
+                        <font face="georgia">Şema yok</font>
+                    </li>
+                    <li>
+                        <font face="georgia">ACID&nbsp;</font>
+                    </li>
+                    <li>
+                        <font face="georgia">Map/Reduce&nbsp;</font>
+                    </li>
+                    <li>
+                        <font face="georgia">Replikasyon</font>
+                    </li>
+                    <li>
+                        <font face="georgia">REST API</font>
+                    </li>
+                    <li>Er ya da geç tutarlı</li>
+                </ul>
+            </div>
+        </section>
+        <section>
+            <h2>
+                <font face="georgia">Ne Değİldİr?</font>
+            </h2>
+            <div>
+                <font face="georgia">
+                    <br>
+                </font>
+            </div>
+            <div>
+                <font face="georgia">
+                    <br>
+                </font>
+            </div>
+            <div>
+                <font face="georgia">
+                    <br>
+                </font>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <font face="georgia">İlişkisel veritabanı</font>
+                    </li>
+                    <li>
+                        <font face="georgia">Nesne Veritabanı</font>
+                    </li>
+                    <li>
+                        <font face="georgia">
+                            <span style="font-size: 36.0px;font-style: normal;font-variant: normal;line-height: 43.1875px;">Gümüş kurşun</span>
+                            <br>
+                        </font>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section>
+            <h2>
+                <font face="georgia">tarİhçe</font>
+            </h2>
+            <div>
+                <br>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <font face="georgia">Damien Katz</font>
+                    </li>
+                    <li>
+                        <font face="georgia">
+                            <span style="font-size: 36.0px;font-style: normal;font-variant: normal;line-height: 43.1875px;">IBM - Lotus Notes Geliştiricisi</span>
+                            <br>
+                        </font>
+                    </li>
+                    <li>
+                        <font face="georgia">Evi arabayı satıp kanepeye yatırıyor</font>
+                    </li>
+                    <li>
+                        <font face="georgia">Evini satıyor, pılı pırtıyı toplayıp taşınıyor</font>
+                    </li>
+                    <li>
+                        <font face="georgia">2 yıl boyunca CouchDB üzerinde çalışıyor</font>
+                    </li>
+                    <li>
+                        <font face="georgia">Proje Apache projeleri arasına giriyor</font>
+                    </li>
+                    <li>
+                        <font face="georgia">Tekrar IBM (CouchDB'yi geliştirmek için)</font>
+                    </li>
+                    <li>
+                        <font face="georgia">Projeyi topluluğa bırakıp kendi yoluna gidiyor</font>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section>
+            <h2>
+    <font face="georgia">gİzlİ sİlah: erlang</font>
+</h2>
+            <div>
+                <ul>
+                    <li>
+                        <font face="georgia">Testler hariç &lt;12k LOC</font>
+                    </li>
+                    <li>
+                        <font face="georgia">20 yıllık oturmuş bir platform</font>
+                    </li>
+                    <li>
+                        <font face="georgia">Concurrent</font>
+                    </li>
+                    <li>
+                        <font face="georgia">Fault tolerant</font>
+                    </li>
+                    <li>
+                        <font face="georgia">Functional</font>
+                    </li>
+                </ul>
+                <div style="text-align: left;">
+                    <font face="georgia">
+                        <br>
+                    </font>
+                </div>
+            </div>
+<div>
+    <img height="200" src="http://i.imgur.com/dZdUxaw.png" width="200">
+    <font face="georgia">
+        <br>
+    </font>
+</div>
+</section>
+            <section>
+                <h4>
+                    <span style="font-size: 2.11em;letter-spacing: 0.02em;line-height: 0.9em;">Cap teoremİ</span>
+                </h4>
+<div>
+    <ul>
+        <li>
+            <font face="georgia">Eventually Consistent</font>
+        </li>
+    </ul>
+    <div style="text-align: left;">
+        <font face="georgia">
+            <br>
+        </font>
+    </div>
+</div>
+<div style="text-align: center;">
+    <img height="300" src="http://i.imgur.com/RRE0Cmu.png" width="350">
+    <font face="georgia">
+        <br>
+    </font>
+</div>
+
+
+
+</section>
+                <section>
+                    <h2>
+                        <font face="georgia">Döküman</font>
+                    </h2>
+                    <div>
+                        <ul>
+                            <li>
+                                <font face="georgia">JSON</font>
+                            </li>
+                        </ul>
+                        <div style="text-align: left;">
+                            <font face="georgia">
+                                <br>
+                            </font>
+                        </div>
+                        <div style="text-align: center;">
+                            <img src="http://i.imgur.com/KIBvOyv.png">
+                            <font face="georgia">
+                                <br>
+                            </font>
+                        </div>
+                        <div style="text-align: center;">
+                            <font face="georgia">
+                                <br>
+                            </font>
+                        </div>
+                        <br>
+                    </div>
+                    <br>
+                </section>
+                <section>
+                    <h2>
+    <font face="georgia">arayüz</font>
+</h2>
+<div>
+    <ul>
+        <li>
+            <span style="letter-spacing: -0.02em;">HTTP&nbsp;</span>
+            <br>
+        </li>
+        <li>
+            <font face="georgia">REST</font>
+                </li>
+            </ul>
+            <div style="text-align: left;">
+        <font face="georgia">
+            <br>
+        </font>
+    </div>
+</div>
+<div style="text-align: center;">
+    <blockquote>
+    Django may be built for the Web, but CouchDB is built of the Web. I’ve never seen software that so completely embraces the philosophies behind HTTP. CouchDB makes Django look old-school in the same way that Django makes ASP look outdated.
+    
+</blockquote>
+        </div>
+
+</section>
+        <section>
+            <h2>
+                <font face="georgia">yüzeyİn bİraz Altı</font>
+            </h2>
+            <div>
+                <div style="text-align: left;">
+                    <font face="georgia">
+                        <br>
+                    </font>
+                </div>
+                <div style="text-align: left;">
+                    <font face="georgia">
+                        <br>
+                    </font>
+                </div>
+                <div style="text-align: left;">
+                    <br>
+                </div>
+                <ul>
+                    <li>
+                        <font face="georgia">B-Tree</font>
+                    </li>
+                    <li>
+                        <font face="georgia">MVCC</font>
+                    </li>
+                    <li>
+                        <font face="georgia">Compaction</font>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section>
+            <h2>
+                <font face="georgia">replİkasyon</font>
+            </h2>
+            <div>
+                <ul>
+                    <li>
+                        <font face="georgia">Local data is the king</font>
+                    </li>
+                    <li>
+                        <font face="georgia">Çift yönlü replikasyon</font>
+                    </li>
+                </ul>
+                <div style="text-align: left;">
+                    <font face="georgia">
+                        <br>
+                    </font>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <img src="http://i.imgur.com/peb3Ka4.jpg">
+                <font face="georgia">
+                    <br>
+                </font>
+            </div>
+        </section>
+        <section>
+            <h2>
+                <font face="georgia">ekler</font>
+            </h2>
+            <div>
+                <ul>
+                    <li>
+                        <font face="georgia">Attachments</font>
+                    </li>
+                </ul>
+                <div style="text-align: left;">
+                    <font face="georgia">
+                        <br>
+                    </font>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <img src="http://i.imgur.com/uQWo7hF.png">
+                <font face="georgia">
+                    <br>
+                </font>
+            </div>
+        </section>
+        <section>
+            <h2>
+                <font face="georgia">couchapp</font>
+            </h2>
+            <div>
+                <font face="georgia">
+                    <br>
+                </font>
+            </div>
+            <div>
+                <font face="georgia">
+                    <br>
+                </font>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <font face="georgia">Futon</font>
+                    </li>
+                    <li>
+                        <font face="georgia">HTML5</font>
+                    </li>
+                    <li>
+                        <font face="georgia">Javascript</font>
+                    </li>
+                    <li>
+                        <font face="georgia">Mobile</font>
+                    </li>
+                    <li>
+                        <font face="georgia">Replikasyon!</font>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section>
+            <h2>
+                <font face="georgia">not only sql</font>
+            </h2>
+            <div>
+                <font face="georgia">
+                    <br>
+                </font>
+            </div>
+            <div>
+                <font face="georgia">
+                    <br>
+                </font>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <font face="georgia">Design document</font>
+                    </li>
+                    <li>
+                        <font face="georgia">Views</font>
+                    </li>
+                    <li>
+                        <font face="georgia">Map</font>
+                    </li>
+                    <li>
+                        <font face="georgia">Reduce</font>
+                    </li>
+                    <li>
+                        <font face="georgia">Farklı diller ile view server</font>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section>
+            <h2>
+                <font face="georgia">sorgularLa şekİl yapmak</font>
+            </h2>
+            <div>
+                <font face="georgia">
+                    <br>
+                </font>
+            </div>
+            <div>
+                <font face="georgia">
+                    <br>
+                </font>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <font face="georgia">List</font>
+                    </li>
+                    <li>
+                        <font face="georgia">Show</font>
+                    </li>
+                    <li>
+                        <font face="georgia">Filter</font>
+                    </li>
+                    <li>
+                        <font face="georgia">Validate</font>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section>
+            <h2>
+                <font face="georgia">canlıya geel!</font>
+            </h2>
+            <div>
+                <font face="georgia">
+                    <br>
+                </font>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <font face="georgia">_changes</font>
+                    </li>
+                    <li>
+                        <font face="georgia">feed</font>
+                    </li>
+                    <li>
+                        <font face="georgia">longpoll</font>
+                    </li>
+                    <li>
+                        <font face="georgia">continuous</font>
+                    </li>
+                    <li>
+                        <font face="georgia">filtered</font>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section>
+            <h2>
+                <font face="georgia">Kİm kullanıyor?</font>
+            </h2>
+            <div>
+                <font face="georgia">
+                    <br>
+                </font>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <font face="georgia">Ubuntu (One)</font>
+                    </li>
+                    <li>
+                        <font face="georgia">BBC</font>
+                    </li>
+                    <li>
+                        <font face="georgia">Credit Suisse</font>
+                    </li>
+                    <li>
+                        <font face="georgia">Meebo</font>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section>
+            <h2>
+                <font face="georgia">ve django...</font>
+            </h2>
+            <div>
+                <font face="georgia">
+                    <br>
+                </font>
+            </div>
+            <div>
+                <font face="georgia">
+                    <br>
+                </font>
+            </div>
+            <div>
+                <font face="georgia">
+                    <br>
+                </font>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <font face="georgia">Çok temel bir tasarım kararı</font>
+                    </li>
+                    <li>
+                        <font face="georgia">Tamamen ilişkisel veritabanları</font>
+                    </li>
+                    <li>
+                        <font face="georgia">Mysql, Postgresql, Sqlite vb.</font>
+                    </li>
+                    <li>
+                        <font face="georgia">Şema kritik</font>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section>
+            <h2>
+                <font face="georgia">couchdbkit</font>
+            </h2>
+            <div>
+                <font face="georgia">
+                    <br>
+                </font>
+            </div>
+            <div>
+                <font face="georgia">
+                    <br>
+                </font>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <font face="georgia">Full istemci</font>
+                    </li>
+                    <li>
+                        <font face="georgia">HTTP backend (curl, httplib)</font>
+                    </li>
+                    <li>
+                        <font face="georgia">Threadsafe</font>
+                    </li>
+                    <li>
+                        <font face="georgia">Design dökümanları</font>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section>
+            <h2>
+                <font face="georgia">client library</font>
+            </h2>
+            <div>
+                <font face="georgia">
+                    <br>
+                </font>
+            </div>
+            <div>
+                <img src="http://i.imgur.com/GTxANHz.png">
+                <font face="georgia">
+                    <br>
+                </font>
+            </div>
+            <div>
+                <img src="http://i.imgur.com/pWehV7G.png">
+                <br>
+            </div>
+            <div>
+                <img src="http://i.imgur.com/mFJ15kg.png">
+                <br>
+            </div>
+        </section>
+        <section>
+            <h2>
+                <font face="georgia">django extension</font>
+            </h2>
+            <div>
+                <font face="georgia">
+                    <br>
+                </font>
+            </div>
+            <div>
+                <font face="georgia">
+                    <br>
+                </font>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <font face="georgia">Document</font>
+                    </li>
+                    <li>
+                        <font face="georgia">DocumentForm</font>
+                    </li>
+                    <li>
+                        <font face="georgia">View sorgulama</font>
+                    </li>
+                    <li>
+                        <font face="georgia">Custom istekler (get_db)</font>
+                    </li>
+                </ul>
+            </div>
+        </section>
+                                                                        <section>
+                                                                            <h2>
+                                                                                <font face="georgia">teşekkürler ve tebrİkler</font>
+                                                                            </h2>
+                                                                            <div>
+                                                                                <font face="georgia">
+                                                                                    <br>
+                                                                                </font>
+                                                                            </div>
+                                                                            <div>
+                                                                                <font face="georgia">
+                                                                                    <br>
+                                                                                </font>
+                                                                            </div>
+                                                                            <div>
+                                                                                <ul>
+                                                                                    <li>
+                                                                                        <font face="georgia">Teşekkürler</font>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <font face="georgia">Sabrınız için...</font>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <font face="georgia">@zekzekus</font>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <font face="georgia">@MetGlobalLabs</font>
+                                                                                    </li>
+                                                                                </ul>
+                                                                                <div style="text-align: left;">
+                                                                                    <font face="georgia">
+                                                                                        <br>
+                                                                                    </font>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div style="text-align: center;">
+                                                                                <font face="georgia">
+                                                                                    <br>
+                                                                                </font>
+                                                                            </div>
+                                                                        </section>
+                                                                    </div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
